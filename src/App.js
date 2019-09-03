@@ -1,9 +1,11 @@
 import React from 'react';
 import Heading from './Heading';
+import TuristInfoCards from './TouristInfoCards'
 import Bookings from './Bookings';
-import TuristInfoCards from './TouristInfoCards';
+import Restaurant from './Restaurant'
 import Footer from './Footer';
 import './App.css';
+
 
 const australiaCity = {
 	image:
@@ -11,7 +13,7 @@ const australiaCity = {
 	altContent: 'australiaImage',
 	cityName: 'Australia',
 	shortTextAbout: 'The big island in the world, full of amazing animal',
-	website: 'visitmanchester.com'
+	website: 'https://peoplemakeglasgow.com/'
 };
 const baliCity = {
 	image:
@@ -19,7 +21,7 @@ const baliCity = {
 	altContent: 'baliImage',
 	cityName: 'Bali',
 	shortTextAbout: 'A beautiful city full of peace, love and spirituality',
-	website: 'peoplemakeglasgow.com'
+	website: 'https://www.visitmanchester.com/'
 };
 const guatemalaCity = {
 	image:
@@ -27,10 +29,10 @@ const guatemalaCity = {
 	altContent: 'GuateImage',
 	cityName: 'Guatemala',
 	shortTextAbout: 'A legendy culture was and is part of this country',
-	website: 'visitlondon.com'
+	website: 'https://www.visitlondon.com/'
 };
 
-const arrOfInfo = [ '123 Fake Street, London, E1 4UD', 'hello@fakehotel.com', '0123 456789' ];
+const arrOfInfo = ['123 Fake Street, London, E1 4UD', 'hello@fakehotel.com', '0123 456789'];
 
 const App = () => {
 	return (
@@ -60,7 +62,9 @@ const App = () => {
 				/>
 			</div>
 			<Bookings />
+			<Restaurant />
 			<Footer footerInfo={arrOfInfo} />
+
 		</div>
 	);
 };
