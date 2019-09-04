@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = (props) => {
 	return (
-		<div>
+		<div className='container footer'>
 			<h3>Contact Us</h3>
-			<ul>
+			<ul className='ul'>
 				{props.footerInfo.map((footerInfo) => {
 					return <li>{footerInfo}</li>;
 				})}

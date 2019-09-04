@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
 import TableSrRow from './TableStRow'
-import TableBody from './TableBody'
 import FakeBookings from "./data/fakeBookings.json";
+import TableBody from './TableBody';
 
-const keysOfObj = ['id', 'title', 'firstName', 'surname', 'email', 'roomId', 'checkInDate', 'checkOutDate', 'days of stay']
+// const keysOfObj = ['id', 'title', 'firstName', 'surname', 'email', 'roomId', 'checkInDate', 'checkOutDate', 'days of stay']
 
-const SearchResult = () => {
-    return (
-        <table className="table">
-            <TableSrRow infoFromArr={keysOfObj} />
-            <TableBody infoFromObj={FakeBookings} />
-        </table>
-    )
+class SearchResult extends Component {
+    render() {
+        return (
+            <div>
+                <table className="table">
+                    <TableSrRow />
+                    <TableBody infoFromObj={FakeBookings} />
+                </table>
+            </div>
+        )
+    }
 }
+
 
 export default SearchResult

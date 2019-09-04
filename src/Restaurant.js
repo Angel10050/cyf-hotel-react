@@ -1,21 +1,18 @@
 import React, { Component } from "react";
-import RestaurantButton from './RestaurantButton'
+import Order from './Order'
 
 class Restaurant extends Component {
 
-  addOrder = () => {
-    console.log('agregar pedido')
-  }
+
 
   render() {
-    const pizzas = 0;
+
     return (
-      <div>
-        <h3>Restaurant Orders</h3>
-        <ul>
-          <li>
-            Pizzas: {pizzas} <RestaurantButton addOrderSh={this.props.addOrder} />
-          </li>
+      <div className='container container1' >
+        <h3 className='row'>Restaurant Orders</h3>
+        <ul className="list-group list-group-flush">
+          <Order orderType={'Pizza'} />
+          <Order orderType={'Salad'} />
         </ul>
       </div >
     )
