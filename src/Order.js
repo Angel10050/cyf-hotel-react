@@ -11,8 +11,8 @@ class Order extends Component {
 
     addOrder = () => {
         console.log('agregar pedido')
-        this.setState((state) => {
-            return { orders: state.orders + 1 }
+        this.setState((stateprev) => {
+            return { orders: stateprev.orders + 1 }
         })
     }
     render() {

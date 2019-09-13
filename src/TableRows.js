@@ -9,30 +9,26 @@ class TableRows extends Component {
     }
 
     handleClick = () => {
-        this.setState(state => ({
-            selecting: !state.selecting
+        this.setState(prevState => ({
+            selecting: !prevState.selecting
         }));
     }
 
     render() {
-        let changeColour = ''
-        if (this.state.selecting) {
-            changeColour = 'changedColour'
-        }
-
-        const fullInfo = this.props.infoObj
+     
+        const {infoObj} = this.props
 
         return (
-            <tr className={changeColour} onClick={this.handleClick}>
-                <th scope="row">{fullInfo.id}</th>
-                <td >{fullInfo.title}</td>
-                <td>{fullInfo.firstName}</td>
-                <td>{fullInfo.surname}</td>
-                <td>{fullInfo.email}</td>
-                <td>{fullInfo.roomId}</td>
-                <td>{fullInfo.checkInDate}</td>
-                <td>{fullInfo.checkOutDate}</td>
-                <td>{moment(fullInfo.checkOutDate).diff(moment(fullInfo.checkInDate), 'days')}</td>
+            <tr className={this.state.selecting ? 'changedColour' : '' } onClick={this.handleClick}>
+                <th scope="row">{infoObj.id}</th>
+                <td >{infoObj.title}</td>
+                <td>{infoObj.firstName}</td>
+                <td>{infoObj.surname}</td>
+                <td>{infoObj.email}</td>
+                <td>{infoObj.roomId}</td>
+                <td>{infoObj.checkInDate}</td>
+                <td>{infoObj.checkOutDate}</td>
+                <td>{moment(infoObj.checkOutDate).diff(moment(infoObj.checkInDate), 'days')}</td>
             </tr>
         )
     }
