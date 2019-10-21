@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import Search from "./Search.js";
 import SearchResults from "./SearchResults.js";
-// import FakeBookings from "./data/fakeBookings.json";
-import { isTerminatorless } from "@babel/types";
 
 
 
@@ -39,7 +37,7 @@ class Bookings extends Component{
   }
 
  search = (searchVal) => {
-  let filtring = this.state.infoFromJson.filter(name => searchVal == name.firstName)
+  let filtring = this.state.infoFromJson.filter(name => searchVal === name.firstName)
   this.setState({
     infoFromJson : filtring,
   })
@@ -50,7 +48,7 @@ class Bookings extends Component{
       return <span className='tryAgain'>Loading ...stay</span>
     }
     else if (this.state.error){
-      return <span className='tryAgain'>❗ Something went wrong ❗</span>
+      return <span className='tryAgain'>Something went wrong</span>
     }
     return (
     <div className="App-content">
